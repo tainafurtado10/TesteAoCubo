@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on darwin)" generated="20211022 00:21:43.284" rpa="false" schemaversion="2">
+<suite id="s1" name="TestSiteBDD" source="/Users/tiagorodrigues/Documents/Workspace/SuiteSiteTeste/testes/TestSiteBDD.robot">
+<kw name="Abrir navegador" library="Base" type="SETUP">
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211022 00:21:48.373" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211022 00:21:43.370" endtime="20211022 00:21:48.373"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211022 00:21:48.374" level="INFO">Opening browser 'chrome' to base url 'http://dev.aocubo.com/corretor'.</msg>
+<status status="PASS" starttime="20211022 00:21:48.373" endtime="20211022 00:21:52.876"/>
+</kw>
+<status status="PASS" starttime="20211022 00:21:43.370" endtime="20211022 00:21:52.877"/>
+</kw>
+<test id="s1-t1" name="001: TesteSiteBDD">
+<kw name="Acessar a página home do site" library="pageLogin">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Corretor AoCubo</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211022 00:21:52.882" level="INFO">Page title is 'Corretor AoCubo'.</msg>
+<status status="PASS" starttime="20211022 00:21:52.878" endtime="20211022 00:21:52.882"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211022 00:21:52.882" level="INFO">Clicking button 'Login'.</msg>
+<status status="PASS" starttime="20211022 00:21:52.882" endtime="20211022 00:21:52.922"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="__next"]/section/main/div/form/div</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211022 00:21:52.922" endtime="20211022 00:21:53.150"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>001_Tela_login.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211022 00:21:53.341" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="001_Tela_login.png"&gt;&lt;img src="001_Tela_login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211022 00:21:53.150" endtime="20211022 00:21:53.341"/>
+</kw>
+<status status="PASS" starttime="20211022 00:21:52.878" endtime="20211022 00:21:53.341"/>
+</kw>
+<kw name="E realizo o login com usuário e senha" library="pageLogin">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>vsantos.lvieira@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211022 00:21:53.342" level="INFO">Typing text 'vsantos.lvieira@gmail.com' into text field 'xpath=//*[@id="__next"]/section/main/div/form/div/div[1]/input'.</msg>
+<status status="PASS" starttime="20211022 00:21:53.342" endtime="20211022 00:21:53.442"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT_SENHA}</arg>
+<arg>Lopo@2812</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20211022 00:21:53.442" level="INFO">Typing password into text field 'xpath=//*[@id="__next"]/section/main/div/form/div/div[2]/input'.</msg>
+<msg timestamp="20211022 00:21:53.459" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211022 00:21:53.484" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20211022 00:21:53.442" endtime="20211022 00:21:53.484"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Fazer login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211022 00:21:53.485" level="INFO">Clicking button 'Fazer login'.</msg>
+<status status="PASS" starttime="20211022 00:21:53.484" endtime="20211022 00:21:53.527"/>
+</kw>
+<status status="PASS" starttime="20211022 00:21:53.341" endtime="20211022 00:21:53.527"/>
+</kw>
+<kw name="E verifica se logou" library="pageLogin">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="__next"]/div/main/div[1]/div[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211022 00:21:53.528" endtime="20211022 00:21:55.027"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//*[@id="__next"]/div/main/div[1]/div[1]</arg>
+<arg>Boa tarde, Vinícius Lopo</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211022 00:21:55.050" level="INFO">Element 'xpath=//*[@id="__next"]/div/main/div[1]/div[1]' contains text 'Boa tarde, Vinícius Lopo'.</msg>
+<status status="PASS" starttime="20211022 00:21:55.027" endtime="20211022 00:21:55.050"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>002_Tela_login.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211022 00:21:55.284" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="002_Tela_login.png"&gt;&lt;img src="002_Tela_login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211022 00:21:55.050" endtime="20211022 00:21:55.284"/>
+</kw>
+<status status="PASS" starttime="20211022 00:21:53.527" endtime="20211022 00:21:55.284"/>
+</kw>
+<kw name="Acessar o menu imóveis" library="pageLogin">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="__next"]/div/aside/div/ul/div/li[2]/a/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211022 00:21:55.285" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div/aside/div/ul/div/li[2]/a/img'.</msg>
+<status status="PASS" starttime="20211022 00:21:55.285" endtime="20211022 00:21:55.334"/>
+</kw>
+<status status="PASS" starttime="20211022 00:21:55.285" endtime="20211022 00:21:55.335"/>
+</kw>
+<kw name="E fazer a busca por filtros" library="pageLogin">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${INPUT_PESQUISA}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211022 00:21:55.335" endtime="20211022 00:21:55.346"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_PESQUISA}</arg>
+<arg>IMOVEL COM TABELA PDF</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211022 00:21:55.347" level="INFO">Typing text 'IMOVEL COM TABELA PDF' into text field 'xpath=//*[@id="textSearch"]'.</msg>
+<status status="PASS" starttime="20211022 00:21:55.347" endtime="20211022 00:21:55.415"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Buscar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211022 00:21:55.416" level="INFO">Clicking button 'Buscar'.</msg>
+<status status="PASS" starttime="20211022 00:21:55.416" endtime="20211022 00:21:55.457"/>
+</kw>
+<status status="PASS" starttime="20211022 00:21:55.335" endtime="20211022 00:21:55.457"/>
+</kw>
+<kw name="Pesquisa pelo nome: IMOVEL COM TABELA PDF e Incorporadora: BKO" library="pageLogin">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Incorporadora</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211022 00:21:55.457" level="INFO">Clicking button 'Incorporadora'.</msg>
+<status status="PASS" starttime="20211022 00:21:55.457" endtime="20211022 00:21:55.490"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211022 00:21:58.492" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211022 00:21:55.490" endtime="20211022 00:21:58.493"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:button:nth-child(11)</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211022 00:21:58.495" level="INFO">Clicking element 'css:button:nth-child(11)'.</msg>
+<status status="PASS" starttime="20211022 00:21:58.494" endtime="20211022 00:21:58.563"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211022 00:22:03.564" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211022 00:21:58.563" endtime="20211022 00:22:03.565"/>
+</kw>
+<status status="PASS" starttime="20211022 00:21:55.457" endtime="20211022 00:22:03.565"/>
+</kw>
+<kw name="Fechar navegador" library="Base" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211022 00:22:03.567" endtime="20211022 00:22:03.666"/>
+</kw>
+<status status="PASS" starttime="20211022 00:22:03.566" endtime="20211022 00:22:03.666"/>
+</kw>
+<status status="PASS" starttime="20211022 00:21:52.877" endtime="20211022 00:22:03.666"/>
+</test>
+<status status="PASS" starttime="20211022 00:21:43.285" endtime="20211022 00:22:03.667"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestSiteBDD">TestSiteBDD</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

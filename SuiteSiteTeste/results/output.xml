@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211027 12:00:09.842" rpa="false" schemaversion="2">
+<suite id="s1" name="TestSiteBDD" source="C:\SuiteSiteTeste\testes\TestSiteBDD.robot">
+<kw name="Abrir navegador" library="Base" type="SETUP">
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:15.468" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211027 12:00:10.452" endtime="20211027 12:00:15.468"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211027 12:00:15.469" level="INFO">Opening browser 'chrome' to base url 'http://dev.aocubo.com/corretor'.</msg>
+<status status="PASS" starttime="20211027 12:00:15.468" endtime="20211027 12:00:21.338"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:10.451" endtime="20211027 12:00:21.338"/>
+</kw>
+<test id="s1-t1" name="001: TesteSiteBDD">
+<kw name="Acessar a página home do site" library="pageLogin">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Corretor AoCubo</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211027 12:00:21.348" level="INFO">Page title is 'Corretor AoCubo'.</msg>
+<status status="PASS" starttime="20211027 12:00:21.341" endtime="20211027 12:00:21.348"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:21.349" level="INFO">Clicking button 'Login'.</msg>
+<status status="PASS" starttime="20211027 12:00:21.348" endtime="20211027 12:00:21.429"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="__next"]/section/main/div/form/div</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211027 12:00:21.429" endtime="20211027 12:00:21.682"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>001_Tela_home.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211027 12:00:21.881" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="001_Tela_home.png"&gt;&lt;img src="001_Tela_home.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 12:00:21.683" endtime="20211027 12:00:21.882"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:21.340" endtime="20211027 12:00:21.882"/>
+</kw>
+<kw name="E realizo o login com usuário e senha" library="pageLogin">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>vsantos.lvieira@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:21.885" level="INFO">Typing text 'vsantos.lvieira@gmail.com' into text field 'xpath=//*[@id="__next"]/section/main/div/form/div/div[1]/input'.</msg>
+<status status="PASS" starttime="20211027 12:00:21.884" endtime="20211027 12:00:22.077"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT_SENHA}</arg>
+<arg>Lopo@2812</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:22.078" level="INFO">Typing password into text field 'xpath=//*[@id="__next"]/section/main/div/form/div/div[2]/input'.</msg>
+<msg timestamp="20211027 12:00:22.129" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211027 12:00:22.206" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20211027 12:00:22.077" endtime="20211027 12:00:22.206"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>002_Tela_login.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211027 12:00:22.334" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="002_Tela_login.png"&gt;&lt;img src="002_Tela_login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 12:00:22.206" endtime="20211027 12:00:22.334"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Fazer login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:22.335" level="INFO">Clicking button 'Fazer login'.</msg>
+<status status="PASS" starttime="20211027 12:00:22.334" endtime="20211027 12:00:22.435"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:21.883" endtime="20211027 12:00:22.436"/>
+</kw>
+<kw name="E verifica se logou" library="pageLogin">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="__next"]/div/main/div[1]/div[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211027 12:00:22.438" endtime="20211027 12:00:24.109"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//*[@id="__next"]/div/main/div[1]/div[1]</arg>
+<arg>Boa tarde, Vinícius Lopo</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211027 12:00:24.136" level="INFO">Element 'xpath=//*[@id="__next"]/div/main/div[1]/div[1]' contains text 'Boa tarde, Vinícius Lopo'.</msg>
+<status status="PASS" starttime="20211027 12:00:24.109" endtime="20211027 12:00:24.137"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>003_Tela_logado.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211027 12:00:24.354" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="003_Tela_logado.png"&gt;&lt;img src="003_Tela_logado.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 12:00:24.137" endtime="20211027 12:00:24.354"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:22.437" endtime="20211027 12:00:24.354"/>
+</kw>
+<kw name="Acessar o menu imóveis" library="pagePesquisa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="__next"]/div/aside/div/ul/div/li[2]/a/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:24.357" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div/aside/div/ul/div/li[2]/a/img'.</msg>
+<status status="PASS" starttime="20211027 12:00:24.356" endtime="20211027 12:00:24.441"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:24.355" endtime="20211027 12:00:24.441"/>
+</kw>
+<kw name="E fazer a busca por filtros" library="pagePesquisa">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${INPUT_PESQUISA}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211027 12:00:24.449" endtime="20211027 12:00:24.863"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_PESQUISA}</arg>
+<arg>IMOVEL COM TABELA PDF</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:24.864" level="INFO">Typing text 'IMOVEL COM TABELA PDF' into text field 'xpath=//*[@id="textSearch"]'.</msg>
+<status status="PASS" starttime="20211027 12:00:24.863" endtime="20211027 12:00:25.128"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Buscar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:25.128" level="INFO">Clicking button 'Buscar'.</msg>
+<status status="PASS" starttime="20211027 12:00:25.128" endtime="20211027 12:00:25.556"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>004_Tela_filtro.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211027 12:00:26.167" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="004_Tela_filtro.png"&gt;&lt;img src="004_Tela_filtro.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 12:00:25.557" endtime="20211027 12:00:26.167"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:24.448" endtime="20211027 12:00:26.168"/>
+</kw>
+<kw name="Pesquisa pelo nome: IMOVEL COM TABELA PDF e Incorporadora: BKO" library="pagePesquisa">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Incorporadora</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:26.175" level="INFO">Clicking button 'Incorporadora'.</msg>
+<status status="PASS" starttime="20211027 12:00:26.174" endtime="20211027 12:00:26.396"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:button:nth-child(11)</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211027 12:00:26.396" endtime="20211027 12:00:26.891"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:button:nth-child(11)</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:26.892" level="INFO">Clicking element 'css:button:nth-child(11)'.</msg>
+<status status="PASS" starttime="20211027 12:00:26.892" endtime="20211027 12:00:27.056"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:29.072" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211027 12:00:27.057" endtime="20211027 12:00:29.072"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${RESULTADO_BUSCA}</arg>
+<arg>IMOVEL COM TABELA PDF</arg>
+<arg>ignore_case=true</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211027 12:00:29.128" level="INFO">Element 'xpath=//*[@id="__next"]/div/main/div[2]/div[1]' contains text 'IMOVEL COM TABELA PDF'.</msg>
+<status status="PASS" starttime="20211027 12:00:29.072" endtime="20211027 12:00:29.128"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>005_Tela_filtro.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211027 12:00:29.357" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="005_Tela_filtro.png"&gt;&lt;img src="005_Tela_filtro.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 12:00:29.129" endtime="20211027 12:00:29.357"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:26.174" endtime="20211027 12:00:29.358"/>
+</kw>
+<kw name="Filtrar preço: 500.000,00 até 501.000,00" library="pagePesquisa">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>css:#__next &gt; div &gt; main &gt; section &gt; ul &gt; li:nth-child(1) &gt; button</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211027 12:00:29.361" level="INFO">Simulating Mouse Over on element 'css:#__next &gt; div &gt; main &gt; section &gt; ul &gt; li:nth-child(1) &gt; button'.</msg>
+<status status="PASS" starttime="20211027 12:00:29.359" endtime="20211027 12:00:29.697"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@value='R$ 0,00']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:29.699" level="INFO">Clicking element 'xpath=//input[@value='R$ 0,00']'.</msg>
+<status status="PASS" starttime="20211027 12:00:29.698" endtime="20211027 12:00:29.803"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_VALOR1}</arg>
+<arg>500.000,00</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:29.805" level="INFO">Typing text '500.000,00' into text field 'xpath=//input[@value='R$ 0,00']'.</msg>
+<status status="PASS" starttime="20211027 12:00:29.803" endtime="20211027 12:00:29.957"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@value='R$ 0,00']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:29.958" level="INFO">Clicking element 'xpath=//input[@value='R$ 0,00']'.</msg>
+<status status="PASS" starttime="20211027 12:00:29.957" endtime="20211027 12:00:30.018"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_VALOR2}</arg>
+<arg>501.000,00</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:30.019" level="INFO">Typing text '501.000,00' into text field 'xpath=//input[@value='R$ 0,00']'.</msg>
+<status status="PASS" starttime="20211027 12:00:30.018" endtime="20211027 12:00:30.167"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Filtrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:30.167" level="INFO">Clicking button 'Filtrar'.</msg>
+<status status="PASS" starttime="20211027 12:00:30.167" endtime="20211027 12:00:30.272"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${RESULTADO_BUSCA}</arg>
+<arg>IMOVEL COM TABELA PDF</arg>
+<arg>ignore_case=true</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211027 12:00:30.361" level="INFO">Element 'xpath=//*[@id="__next"]/div/main/div[2]/div[1]' contains text 'IMOVEL COM TABELA PDF'.</msg>
+<status status="PASS" starttime="20211027 12:00:30.272" endtime="20211027 12:00:30.361"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:33.365" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211027 12:00:30.362" endtime="20211027 12:00:33.365"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:29.358" endtime="20211027 12:00:33.365"/>
+</kw>
+<kw name="Filtrar Tipo de imóvel: Apartamento" library="pagePesquisa">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>css:#__next &gt; div &gt; main &gt; section &gt; ul &gt; li:nth-child(2) &gt; button</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211027 12:00:33.367" level="INFO">Simulating Mouse Over on element 'css:#__next &gt; div &gt; main &gt; section &gt; ul &gt; li:nth-child(2) &gt; button'.</msg>
+<status status="PASS" starttime="20211027 12:00:33.367" endtime="20211027 12:00:33.685"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id = 1</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:33.686" level="INFO">Clicking element 'id = 1'.</msg>
+<status status="PASS" starttime="20211027 12:00:33.685" endtime="20211027 12:00:33.756"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Filtrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:33.757" level="INFO">Clicking button 'Filtrar'.</msg>
+<status status="PASS" starttime="20211027 12:00:33.756" endtime="20211027 12:00:33.850"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${RESULTADO_BUSCA}</arg>
+<arg>IMOVEL COM TABELA PDF</arg>
+<arg>ignore_case=true</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211027 12:00:33.954" level="INFO">Element 'xpath=//*[@id="__next"]/div/main/div[2]/div[1]' contains text 'IMOVEL COM TABELA PDF'.</msg>
+<status status="PASS" starttime="20211027 12:00:33.851" endtime="20211027 12:00:33.955"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:36.970" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211027 12:00:33.955" endtime="20211027 12:00:36.970"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:33.366" endtime="20211027 12:00:36.970"/>
+</kw>
+<kw name="Filtrar Estágio da obra: Pronto" library="pagePesquisa">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>css:#__next &gt; div &gt; main &gt; section &gt; ul &gt; li:nth-child(3) &gt; button</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211027 12:00:36.973" level="INFO">Simulating Mouse Over on element 'css:#__next &gt; div &gt; main &gt; section &gt; ul &gt; li:nth-child(3) &gt; button'.</msg>
+<status status="PASS" starttime="20211027 12:00:36.972" endtime="20211027 12:00:37.287"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=COMPLETE</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:37.288" level="INFO">Clicking element 'id=COMPLETE'.</msg>
+<status status="PASS" starttime="20211027 12:00:37.287" endtime="20211027 12:00:37.354"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Filtrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:37.354" level="INFO">Clicking button 'Filtrar'.</msg>
+<status status="PASS" starttime="20211027 12:00:37.354" endtime="20211027 12:00:37.452"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${RESULTADO_BUSCA}</arg>
+<arg>IMOVEL COM TABELA PDF</arg>
+<arg>ignore_case=true</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211027 12:00:37.554" level="INFO">Element 'xpath=//*[@id="__next"]/div/main/div[2]/div[1]' contains text 'IMOVEL COM TABELA PDF'.</msg>
+<status status="PASS" starttime="20211027 12:00:37.452" endtime="20211027 12:00:37.554"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:40.558" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211027 12:00:37.555" endtime="20211027 12:00:40.558"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:36.971" endtime="20211027 12:00:40.558"/>
+</kw>
+<kw name="Filtrar Características do imóvel: Área Privativa, Dormitórios" library="pagePesquisa">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>css:#__next &gt; div &gt; main &gt; section &gt; ul &gt; li:nth-child(4) &gt; button</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211027 12:00:40.560" level="INFO">Simulating Mouse Over on element 'css:#__next &gt; div &gt; main &gt; section &gt; ul &gt; li:nth-child(4) &gt; button'.</msg>
+<status status="PASS" starttime="20211027 12:00:40.560" endtime="20211027 12:00:40.855"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@value='0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:40.856" level="INFO">Clicking element 'xpath=//input[@value='0']'.</msg>
+<status status="PASS" starttime="20211027 12:00:40.855" endtime="20211027 12:00:40.948"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_AREA1}</arg>
+<arg>40m²</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:40.949" level="INFO">Typing text '40m²' into text field 'xpath=//input[@value='0']'.</msg>
+<status status="PASS" starttime="20211027 12:00:40.949" endtime="20211027 12:00:41.088"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@value='0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:41.089" level="INFO">Clicking element 'xpath=//input[@value='0']'.</msg>
+<status status="PASS" starttime="20211027 12:00:41.089" endtime="20211027 12:00:41.171"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_AREA2}</arg>
+<arg>60m²</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:41.172" level="INFO">Typing text '60m²' into text field 'xpath=//input[@value='0']'.</msg>
+<status status="PASS" starttime="20211027 12:00:41.171" endtime="20211027 12:00:41.293"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:42.297" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211027 12:00:41.293" endtime="20211027 12:00:42.297"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=(.//*[normalize-space(text()) and normalize-space(.)='até'])[1]/following::button[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:42.298" level="INFO">Clicking element 'xpath=(.//*[normalize-space(text()) and normalize-space(.)='até'])[1]/following::button[2]'.</msg>
+<status status="PASS" starttime="20211027 12:00:42.297" endtime="20211027 12:00:42.364"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Filtrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:42.365" level="INFO">Clicking button 'Filtrar'.</msg>
+<status status="PASS" starttime="20211027 12:00:42.365" endtime="20211027 12:00:42.477"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:45.480" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211027 12:00:42.477" endtime="20211027 12:00:45.480"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>006_Tela_filtro.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211027 12:00:45.639" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="006_Tela_filtro.png"&gt;&lt;img src="006_Tela_filtro.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 12:00:45.480" endtime="20211027 12:00:45.639"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:40.559" endtime="20211027 12:00:45.640"/>
+</kw>
+<kw name="Realiza a busca de imóvel através do filtro Cidade ou Bairro" library="pagePesquisa">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Cidade ou bairro</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:45.642" level="INFO">Clicking button 'Cidade ou bairro'.</msg>
+<status status="PASS" starttime="20211027 12:00:45.641" endtime="20211027 12:00:45.765"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="__next"]/div/main/section/article/article/article/label[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:45.766" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div/main/section/article/article/article/label[2]/button'.</msg>
+<status status="PASS" starttime="20211027 12:00:45.766" endtime="20211027 12:00:45.812"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:46.819" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211027 12:00:45.812" endtime="20211027 12:00:46.819"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="__next"]/div/main/section/article/article/article/label[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:46.820" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div/main/section/article/article/article/label[2]/button'.</msg>
+<status status="PASS" starttime="20211027 12:00:46.819" endtime="20211027 12:00:46.862"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:47.871" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211027 12:00:46.863" endtime="20211027 12:00:47.871"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:div.css-kovx5y.e1j7hizk0</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211027 12:00:47.871" endtime="20211027 12:00:47.898"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:50.914" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211027 12:00:47.898" endtime="20211027 12:00:50.914"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:45.640" endtime="20211027 12:00:50.914"/>
+</kw>
+<kw name="Realiza a busca da Cidade: São Paulo" library="pagePesquisa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:div.dropdown_input&gt;input[type=text]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:50.916" level="INFO">Clicking element 'css:div.dropdown_input&gt;input[type=text]'.</msg>
+<status status="PASS" starttime="20211027 12:00:50.916" endtime="20211027 12:00:50.987"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(),'São Paulo - SP')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:50.988" level="INFO">Clicking element 'xpath=//*[contains(text(),'São Paulo - SP')]'.</msg>
+<status status="PASS" starttime="20211027 12:00:50.987" endtime="20211027 12:00:51.086"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:53.089" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211027 12:00:51.086" endtime="20211027 12:00:53.089"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:50.915" endtime="20211027 12:00:53.089"/>
+</kw>
+<kw name="Realiza a busca da Região: Centro" library="pagePesquisa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath =//div[2]/div/div/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:53.091" level="INFO">Clicking element 'xpath =//div[2]/div/div/input'.</msg>
+<status status="PASS" starttime="20211027 12:00:53.091" endtime="20211027 12:00:53.189"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(),'Centro')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:53.190" level="INFO">Clicking element 'xpath=//*[contains(text(),'Centro')]'.</msg>
+<status status="PASS" starttime="20211027 12:00:53.190" endtime="20211027 12:00:53.284"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211027 12:00:54.289" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211027 12:00:53.284" endtime="20211027 12:00:54.289"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:53.090" endtime="20211027 12:00:54.289"/>
+</kw>
+<kw name="Em Resultado escolher a opção República" library="pagePesquisa">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//li[15]/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:54.291" level="INFO">Clicking element 'xpath=//li[15]/input'.</msg>
+<status status="PASS" starttime="20211027 12:00:54.291" endtime="20211027 12:00:54.401"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>007_Tela_filtro.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211027 12:00:54.723" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="007_Tela_filtro.png"&gt;&lt;img src="007_Tela_filtro.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 12:00:54.402" endtime="20211027 12:00:54.723"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Buscar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211027 12:00:54.724" level="INFO">Clicking button 'Buscar'.</msg>
+<status status="PASS" starttime="20211027 12:00:54.723" endtime="20211027 12:00:54.780"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>008_Tela_filtro.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211027 12:00:54.959" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="008_Tela_filtro.png"&gt;&lt;img src="008_Tela_filtro.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 12:00:54.780" endtime="20211027 12:00:54.959"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${RESULTADO_BUSCA}</arg>
+<arg>IMOVEL COM TABELA PDF</arg>
+<arg>ignore_case=true</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211027 12:00:55.122" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211027 12:00:54.982" endtime="20211027 12:00:55.122"/>
+</kw>
+<msg timestamp="20211027 12:00:55.177" level="FAIL">Element 'xpath=//*[@id="__next"]/div/main/div[2]/div[1]' should have contained text 'IMOVEL COM TABELA PDF' but its text was 'Não encontramos nenhum imóvel'.</msg>
+<status status="FAIL" starttime="20211027 12:00:54.959" endtime="20211027 12:00:55.177"/>
+</kw>
+<status status="FAIL" starttime="20211027 12:00:54.290" endtime="20211027 12:00:55.178"/>
+</kw>
+<kw name="Fechar navegador" library="Base" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211027 12:00:55.180" endtime="20211027 12:00:57.557"/>
+</kw>
+<status status="PASS" starttime="20211027 12:00:55.179" endtime="20211027 12:00:57.557"/>
+</kw>
+<status status="FAIL" starttime="20211027 12:00:21.338" endtime="20211027 12:00:57.558">Element 'xpath=//*[@id="__next"]/div/main/div[2]/div[1]' should have contained text 'IMOVEL COM TABELA PDF' but its text was 'Não encontramos nenhum imóvel'.</status>
+</test>
+<status status="FAIL" starttime="20211027 12:00:09.845" endtime="20211027 12:00:57.561"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TestSiteBDD">TestSiteBDD</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
